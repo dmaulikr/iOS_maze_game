@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let manager = CMMotionManager()
     var message = SKLabelNode()
     var playAgain = SKLabelNode()
+    var muffin = SKSpriteNode()
     
     override func didMoveToView(view: SKView) {
         
@@ -32,16 +33,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        let ball = SKShapeNode(circleOfRadius: 50)
-        ball.position = CGPointMake(500, 150)
-        ball.name = "Roundie"
-        ball.fillColor = SKColor.blueColor()
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-        ball.physicsBody?.fieldBitMask = 1
+        //let ball = SKShapeNode(circleOfRadius: 50)
+        //let ball = SKSpriteNode(imageNamed: "muffin_medium")
         
-        self.addChild(ball)
+
+        //ball.position = CGPointMake(500, 150)
+        //ball.name = "Roundie"
+        
+        
+        
+        //ball.fillColor = SKColor.blueColor()
+        //ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        //ball.physicsBody?.fieldBitMask = 1
+        
+        //self.addChild(ball)
         message = self.childNodeWithName("popUp") as! SKLabelNode
         playAgain = self.childNodeWithName("playAgain") as! SKLabelNode
+        muffin = self.childNodeWithName("muffin") as! SKSpriteNode
 
         playAgain.text = ""
         message.text = ""
@@ -63,16 +71,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
         
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 2){
-            ballHit.node?.removeFromParent()
+            //ballHit.node?.removeFromParent()
             message.text = "You lost"
         }
         
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 3){
-            ballHit.node?.removeFromParent()
+            //ballHit.node?.removeFromParent()
             message.text = "You WIN"
             
         }
         
+        muffin.hidden = true
         playAgain.text = "Touch to Play Again"
         
     }
@@ -82,19 +91,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for touch in touches {
             
-            
             if((self.childNodeWithName("Roundie")) == nil){
                 
                 playAgain.text = ""
                 message.text = ""
-                let ball = SKShapeNode(circleOfRadius: 50)
-                ball.position = CGPointMake(500, 150)
-                ball.fillColor = SKColor.blueColor()
-                ball.name = "Roundie"
-                ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-                ball.physicsBody?.fieldBitMask = 1
+                
+                
+                muffin.position = CGPointMake(904, 250)
+                muffin.physicsBody?.velocity.dx = 0
+                muffin.physicsBody?.velocity.dy = 0
+                muffin.hidden = false
+                //let ball = SKShapeNode(circleOfRadius: 50)
+                //let ball = SKSpriteNode(imageNamed: "muffin_medium")
+
+                
+                //ball.position = CGPointMake(500, 150)
+                //ball.fillColor = SKColor.blueColor()
+                //ball.name = "Roundie"
+                //ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+                //ball.physicsBody?.fieldBitMask = 1
             
-                self.addChild(ball)
+                //self.addChild(ball)
             }
             
 
