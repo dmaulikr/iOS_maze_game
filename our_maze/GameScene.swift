@@ -18,12 +18,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var playAgain = SKLabelNode()
     var muffin = SKSpriteNode()
     var gameBackgroundMusic = SKAudioNode()
+    var winningMusic = SKAudioNode()
     
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         
+        self.childNodeWithName("winmusic")?.removeFromParent()
+        
         gameBackgroundMusic = SKAudioNode(fileNamed: "dog.mp3")
+        gameBackgroundMusic.name = "bgmusic"
         addChild(gameBackgroundMusic)
         
         
@@ -72,16 +76,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //ballHit.node?.removeFromParent()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             message.text = "You lost"
-            message.fontColor = UIColor()
+//            message.fontColor = UIColor()
+            
+//            self.childNodeWithName("bgmusic")?.removeFromParent()
+            
+    
+            
+            
         }
         
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 3){
             //ballHit.node?.removeFromParent()
+            
+            self.childNodeWithName("bgmusic")?.removeFromParent()
+
             message.text = "You WIN"
             
+            winningMusic = SKAudioNode(fileNamed: "chewing.mp3")
+            winningMusic.name = "winmusic"
+            addChild(winningMusic)
+            
         }
-        
-        muffin.hidden = true
+        muffin.physicsBody?.velocity.dx = 0
+        muffin.physicsBody?.velocity.dy = 0
+//        muffin.hidden = true
+        self.childNodeWithName("bgmusic")?.removeFromParent()
         playAgain.text = "Touch to Play Again"
         
     }
@@ -89,7 +108,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
+        self.childNodeWithName("winmusic")?.removeFromParent()
+        
         for touch in touches {
+            
             
             if((self.childNodeWithName("Roundie")) == nil){
                 
@@ -101,6 +123,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 muffin.physicsBody?.velocity.dx = 0
                 muffin.physicsBody?.velocity.dy = 0
                 muffin.hidden = false
+                
+                gameBackgroundMusic = SKAudioNode(fileNamed: "dog.mp3")
+                gameBackgroundMusic.name = "bgmusic"
+                addChild(gameBackgroundMusic)
 
             }
             

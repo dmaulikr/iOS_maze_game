@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99087A561CDD8FC6004C2963 /* dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 99087A551CDD8FC6004C2963 /* dog.mp3 */; };
+		99087A5A1CDD9C1F004C2963 /* chewing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 99087A591CDD9C1F004C2963 /* chewing.mp3 */; };
 		992C6FDD1CDD467100360C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C6FDC1CDD467100360C44 /* AppDelegate.swift */; };
 		992C6FDF1CDD467100360C44 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 992C6FDE1CDD467100360C44 /* GameScene.sks */; };
 		992C6FE11CDD467100360C44 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C6FE01CDD467100360C44 /* GameScene.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99087A551CDD8FC6004C2963 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dog.mp3; path = ../../../../../Downloads/dog.mp3; sourceTree = "<group>"; };
+		99087A591CDD9C1F004C2963 /* chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chewing.mp3; sourceTree = "<group>"; };
 		992C6FD91CDD467100360C44 /* our_maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = our_maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		992C6FDC1CDD467100360C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		992C6FDE1CDD467100360C44 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				992C6FE41CDD467100360C44 /* Main.storyboard */,
 				992C6FF41CDD610600360C44 /* map2.png */,
 				992C6FE71CDD467100360C44 /* Assets.xcassets */,
+				99087A591CDD9C1F004C2963 /* chewing.mp3 */,
+				99087A551CDD8FC6004C2963 /* dog.mp3 */,
 				992C6FE91CDD467100360C44 /* LaunchScreen.storyboard */,
 				992C6FEC1CDD467100360C44 /* Info.plist */,
 			);
@@ -139,8 +145,10 @@
 				992C6FDF1CDD467100360C44 /* GameScene.sks in Resources */,
 				992C6FF51CDD610600360C44 /* map2.png in Resources */,
 				992C6FEB1CDD467100360C44 /* LaunchScreen.storyboard in Resources */,
+				99087A561CDD8FC6004C2963 /* dog.mp3 in Resources */,
 				992C6FE81CDD467100360C44 /* Assets.xcassets in Resources */,
 				992C6FE61CDD467100360C44 /* Main.storyboard in Resources */,
+				99087A5A1CDD9C1F004C2963 /* chewing.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +319,7 @@
 				992C6FF11CDD467100360C44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
