@@ -8,6 +8,7 @@
 
 import SpriteKit
 import CoreMotion
+import AudioToolbox
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -16,10 +17,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var message = SKLabelNode()
     var playAgain = SKLabelNode()
     var muffin = SKSpriteNode()
+    var gameBackgroundMusic = SKAudioNode()
     
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
+        
+        gameBackgroundMusic = SKAudioNode(fileNamed: "dog.mp3")
+        addChild(gameBackgroundMusic)
         
         
         /* Manager Stuff */
@@ -39,14 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         //ball.position = CGPointMake(500, 150)
         //ball.name = "Roundie"
-        
-        
-        
-        //ball.fillColor = SKColor.blueColor()
-        //ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-        //ball.physicsBody?.fieldBitMask = 1
-        
-        //self.addChild(ball)
+
         message = self.childNodeWithName("popUp") as! SKLabelNode
         playAgain = self.childNodeWithName("playAgain") as! SKLabelNode
         muffin = self.childNodeWithName("muffin") as! SKSpriteNode
@@ -72,7 +70,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 2){
             //ballHit.node?.removeFromParent()
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             message.text = "You lost"
+            message.fontColor = UIColor()
         }
         
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 3){
@@ -101,17 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 muffin.physicsBody?.velocity.dx = 0
                 muffin.physicsBody?.velocity.dy = 0
                 muffin.hidden = false
-                //let ball = SKShapeNode(circleOfRadius: 50)
-                //let ball = SKSpriteNode(imageNamed: "muffin_medium")
 
-                
-                //ball.position = CGPointMake(500, 150)
-                //ball.fillColor = SKColor.blueColor()
-                //ball.name = "Roundie"
-                //ball.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-                //ball.physicsBody?.fieldBitMask = 1
-            
-                //self.addChild(ball)
             }
             
 
