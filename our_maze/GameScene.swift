@@ -132,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(ballHit.fieldBitMask == 1 && border.fieldBitMask == 3){
             
             runAction(SKAction.playSoundFileNamed("chewing.mp3", waitForCompletion: true))
-            
+            wonMessage.hidden = false
         }
         
         muffin.physicsBody?.affectedByGravity = false
