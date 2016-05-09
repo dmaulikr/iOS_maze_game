@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99087A551CDD8FC6004C2963 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dog.mp3; path = ../../../../../Downloads/dog.mp3; sourceTree = "<group>"; };
+		99087A551CDD8FC6004C2963 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dog.mp3; sourceTree = "<group>"; };
 		99087A591CDD9C1F004C2963 /* chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chewing.mp3; sourceTree = "<group>"; };
 		992C6FD91CDD467100360C44 /* Muffin Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muffin Maze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992C6FDC1CDD467100360C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
