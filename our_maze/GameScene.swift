@@ -17,19 +17,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var wonMessage = SKSpriteNode()
     var lostMessage = SKSpriteNode()
     
-    
-    //var playAgain = SKLabelNode()
     var playAgain = SKSpriteNode()
-    
-    
     
     var goHome = SKSpriteNode()
     
     var muffin = SKSpriteNode()
-    var gameBackgroundMusic = SKAudioNode()
-    var winningMusic = SKAudioNode()
-    
-    
     
     var difficulty : String?
     var levels = SKSpriteNode()
@@ -50,15 +42,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
         self.physicsWorld.contactDelegate = self
         
-        gameBackgroundMusic = SKAudioNode(fileNamed: "dog.mp3")
-        gameBackgroundMusic.name = "bgmusic"
-        addChild(gameBackgroundMusic)
+        runAction(SKAction.playSoundFileNamed("dog.mp3", waitForCompletion: false))
         
         resetLevel = self.childNodeWithName("resetLevel") as! SKSpriteNode
         resetLevel.hidden = true
-        
-        
-//        message = self.childNodeWithName("popUp") as! SKLabelNode
         playAgain = self.childNodeWithName("playAgain") as! SKSpriteNode
         playAgain.hidden = true
         
@@ -105,8 +92,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         muffin.physicsBody?.affectedByGravity = true
         
-        /* Remove difficulty options */
-        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -139,7 +124,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         muffin.physicsBody?.velocity.dx = 0
         muffin.physicsBody?.velocity.dy = 0
         muffin.hidden = true
-        self.childNodeWithName("bgmusic")?.removeFromParent()
         
         playAgain.hidden = false
         goHome.hidden = false
@@ -155,12 +139,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(node.name == "playAgain"){
             self.resetCurrentScene()
-//            
-//            if(self.difficulty == "hard"){
-//                let rotateAction = SKAction.rotateByAngle(CGFloat(2 * M_PI), duration: 360.0)
-//                self.childNodeWithName("hard3")?.runAction(rotateAction)
-//                
-//            }
         } else if(node.name == "goHome"){ //Go back to Home menu
             let nextScene = HomeScene(fileNamed: "HomeScene")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
@@ -256,14 +234,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.childNodeWithName("hard3")?.physicsBody?.collisionBitMask = 1
             self.childNodeWithName("hard3")?.physicsBody?.fieldBitMask = 1
             
-            
-//            self.childNodeWithName("hard1")?.removeFromParent()
-//            self.childNodeWithName("hard2")?.removeFromParent()
-//            self.childNodeWithName("hard3")?.removeFromParent()
-//            self.childNodeWithName("medium1")?.removeFromParent()
-//            self.childNodeWithName("medium2")?.removeFromParent()
-//            self.childNodeWithName("medium3")?.removeFromParent()
-        
         
         } else if(self.difficulty == "medium"){
             
@@ -347,13 +317,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.childNodeWithName("hard3")?.physicsBody?.collisionBitMask = 2
             self.childNodeWithName("hard3")?.physicsBody?.fieldBitMask = 2
             
-            
-            /* Possible rotation things */
-//            let rotateAction = SKAction.rotateByAngle(CGFloat(50 * M_PI), duration: 60.0)
-//            self.childNodeWithName("hard3")?.runAction(rotateAction)
-
-        
         }
+        
+        /* Possible rotation things */
+        
+        let rotateAction = SKAction.rotateByAngle(CGFloat(10 * M_PI), duration: 120.0)
+        self.childNodeWithName("rotateBar")?.runAction(rotateAction)
+
 
         startGravity()
 
@@ -373,10 +343,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         muffin.physicsBody?.velocity.dy = 0
         muffin.physicsBody?.affectedByGravity = true
         muffin.hidden = false
-        
-        gameBackgroundMusic = SKAudioNode(fileNamed: "dog.mp3")
-        gameBackgroundMusic.name = "bgmusic"
-        addChild(gameBackgroundMusic)
         
     }
     
