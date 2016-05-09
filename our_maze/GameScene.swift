@@ -12,6 +12,12 @@ import AudioToolbox
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    //Pause variables
+    var pausedGame = false
+    var muffinDx = CGFloat(0)
+    var muffinDy = CGFloat(0)
+    
+    
     /* Setup your scene here */
     let manager = CMMotionManager()
     var wonMessage = SKSpriteNode()
@@ -31,11 +37,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var mediumLevel = SKSpriteNode()
     var hardLevel = SKSpriteNode()
     var resetLevel = SKSpriteNode()
+    var pauseLabel = SKLabelNode()
     
     
     override func didMoveToView(view: SKView) {
         
         
+        pauseLabel = self.childNodeWithName("pauseLabel") as! SKLabelNode
+        pauseLabel.hidden = true
         
         wonMessage = self.childNodeWithName("wonMessage") as! SKSpriteNode
         lostMessage = self.childNodeWithName("lostMessage") as! SKSpriteNode
@@ -184,6 +193,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             muffin.physicsBody?.affectedByGravity = false
             muffin.hidden = false
         }
+        else if(node.name == "muffin" && pausedGame == false){   // Pause the game
+            muffinDx = (muffin.physicsBody?.velocity.dx)!
+            muffinDy = (muffin.physicsBody?.velocity.dy)!
+            muffin.physicsBody?.affectedByGravity = false
+            muffin.physicsBody?.velocity.dx = 0
+            muffin.physicsBody?.velocity.dy = 0
+            pauseLabel.hidden = false
+            pausedGame = true
+        }
+        else if(node.name == "muffin" && pausedGame == true){
+            muffin.physicsBody?.affectedByGravity = true
+            muffin.physicsBody?.velocity.dx = muffinDx
+            muffin.physicsBody?.velocity.dy = muffinDy
+            pauseLabel.hidden = true
+            pausedGame = false
+        }
+        
+        
         
     }
     
