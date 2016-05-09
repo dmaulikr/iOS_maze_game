@@ -155,6 +155,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(node.name == "playAgain"){
             self.resetCurrentScene()
+//            
+//            if(self.difficulty == "hard"){
+//                let rotateAction = SKAction.rotateByAngle(CGFloat(2 * M_PI), duration: 360.0)
+//                self.childNodeWithName("hard3")?.runAction(rotateAction)
+//                
+//            }
         } else if(node.name == "goHome"){ //Go back to Home menu
             let nextScene = HomeScene(fileNamed: "HomeScene")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
@@ -183,6 +189,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             muffin.physicsBody?.velocity.dy = 0
             muffin.physicsBody?.affectedByGravity = false
             muffin.hidden = false
+            
+            
         }
         
     }
@@ -338,6 +346,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.childNodeWithName("hard3")?.physicsBody?.categoryBitMask = 1
             self.childNodeWithName("hard3")?.physicsBody?.collisionBitMask = 2
             self.childNodeWithName("hard3")?.physicsBody?.fieldBitMask = 2
+            
+            
+            /* Possible rotation things */
+//            let rotateAction = SKAction.rotateByAngle(CGFloat(50 * M_PI), duration: 60.0)
+//            self.childNodeWithName("hard3")?.runAction(rotateAction)
+
         
         }
 

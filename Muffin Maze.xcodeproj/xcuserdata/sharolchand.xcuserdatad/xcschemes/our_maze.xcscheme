@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "992C6FD81CDD467100360C44"
-               BuildableName = "our_maze.app"
-               BlueprintName = "our_maze"
-               ReferencedContainer = "container:our_maze.xcodeproj">
+               BuildableName = "Muffin Maze.app"
+               BlueprintName = "Muffin Maze"
+               ReferencedContainer = "container:Muffin Maze.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "992C6FD81CDD467100360C44"
-            BuildableName = "our_maze.app"
-            BlueprintName = "our_maze"
-            ReferencedContainer = "container:our_maze.xcodeproj">
+            BuildableName = "Muffin Maze.app"
+            BlueprintName = "Muffin Maze"
+            ReferencedContainer = "container:Muffin Maze.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "992C6FD81CDD467100360C44"
-            BuildableName = "our_maze.app"
-            BlueprintName = "our_maze"
-            ReferencedContainer = "container:our_maze.xcodeproj">
+            BuildableName = "Muffin Maze.app"
+            BlueprintName = "Muffin Maze"
+            ReferencedContainer = "container:Muffin Maze.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "992C6FD81CDD467100360C44"
-            BuildableName = "our_maze.app"
-            BlueprintName = "our_maze"
-            ReferencedContainer = "container:our_maze.xcodeproj">
+            BuildableName = "Muffin Maze.app"
+            BlueprintName = "Muffin Maze"
+            ReferencedContainer = "container:Muffin Maze.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

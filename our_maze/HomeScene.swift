@@ -36,17 +36,17 @@ class HomeScene: SKScene, SKPhysicsContactDelegate {
         if(node.name == "Main"){
             let nextScene = GameScene(fileNamed: "GameScene")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
-            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(2))
+            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(1))
             
         } else if(node.name == "Ocean"){
             let nextScene = GameScene(fileNamed: "GameScene1")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
-            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(2))
+            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(1))
             
         } else if(node.name == "Jungle"){
             let nextScene = GameScene(fileNamed: "GameScene2")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
-            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(2))
+            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(1))
         }
         
         

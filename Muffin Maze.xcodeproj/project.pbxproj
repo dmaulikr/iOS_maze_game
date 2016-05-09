@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		99087A551CDD8FC6004C2963 /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dog.mp3; path = ../../../../../Downloads/dog.mp3; sourceTree = "<group>"; };
 		99087A591CDD9C1F004C2963 /* chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chewing.mp3; sourceTree = "<group>"; };
-		992C6FD91CDD467100360C44 /* our_maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = our_maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		992C6FD91CDD467100360C44 /* Muffin Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Muffin Maze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992C6FDC1CDD467100360C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		992C6FDE1CDD467100360C44 /* GameScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene2.sks; sourceTree = "<group>"; };
 		992C6FE01CDD467100360C44 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		992C6FDA1CDD467100360C44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				992C6FD91CDD467100360C44 /* our_maze.app */,
+				992C6FD91CDD467100360C44 /* Muffin Maze.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		992C6FD81CDD467100360C44 /* our_maze */ = {
+		992C6FD81CDD467100360C44 /* Muffin Maze */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 992C6FEF1CDD467100360C44 /* Build configuration list for PBXNativeTarget "our_maze" */;
+			buildConfigurationList = 992C6FEF1CDD467100360C44 /* Build configuration list for PBXNativeTarget "Muffin Maze" */;
 			buildPhases = (
 				992C6FD51CDD467100360C44 /* Sources */,
 				992C6FD61CDD467100360C44 /* Frameworks */,
@@ -107,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = our_maze;
+			name = "Muffin Maze";
 			productName = our_maze;
-			productReference = 992C6FD91CDD467100360C44 /* our_maze.app */;
+			productReference = 992C6FD91CDD467100360C44 /* Muffin Maze.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 992C6FD41CDD467100360C44 /* Build configuration list for PBXProject "our_maze" */;
+			buildConfigurationList = 992C6FD41CDD467100360C44 /* Build configuration list for PBXProject "Muffin Maze" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -141,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				992C6FD81CDD467100360C44 /* our_maze */,
+				992C6FD81CDD467100360C44 /* Muffin Maze */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +293,7 @@
 				INFOPLIST_FILE = our_maze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sharolchand.our-maze";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Muffin Maze";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -307,7 +307,7 @@
 				INFOPLIST_FILE = our_maze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sharolchand.our-maze";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Muffin Maze";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -315,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		992C6FD41CDD467100360C44 /* Build configuration list for PBXProject "our_maze" */ = {
+		992C6FD41CDD467100360C44 /* Build configuration list for PBXProject "Muffin Maze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				992C6FED1CDD467100360C44 /* Debug */,
@@ -324,7 +324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		992C6FEF1CDD467100360C44 /* Build configuration list for PBXNativeTarget "our_maze" */ = {
+		992C6FEF1CDD467100360C44 /* Build configuration list for PBXNativeTarget "Muffin Maze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				992C6FF01CDD467100360C44 /* Debug */,
