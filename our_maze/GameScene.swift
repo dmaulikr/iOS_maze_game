@@ -16,6 +16,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let manager = CMMotionManager()
     var wonMessage = SKSpriteNode()
     var lostMessage = SKSpriteNode()
+    var timerLabel = SKLabelNode()
+    var timerCount = SKLabelNode()
     
     var playAgain = SKSpriteNode()
     
@@ -33,12 +35,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
+        
+        
         wonMessage = self.childNodeWithName("wonMessage") as! SKSpriteNode
         lostMessage = self.childNodeWithName("lostMessage") as! SKSpriteNode
         
         wonMessage.hidden = true
         lostMessage.hidden = true
         
+        timerLabel = self.childNodeWithName("timerLabel") as! SKLabelNode
+        timerCount = self.childNodeWithName("timerCount") as! SKLabelNode
+        
+        timerLabel.hidden = true
+        timerCount.hidden = true
     
         self.physicsWorld.contactDelegate = self
         
@@ -79,6 +88,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.childNodeWithName("hard3")?.hidden = true
     }
     
+    func startCountDown(){
+        
+    }
     
     func startGravity(){
         
@@ -139,22 +151,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(node.name == "playAgain"){
             self.resetCurrentScene()
+            gameStart()
         } else if(node.name == "goHome"){ //Go back to Home menu
             let nextScene = HomeScene(fileNamed: "HomeScene")
             nextScene?.scaleMode = SKSceneScaleMode.AspectFill
-            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(2))
+            self.scene?.view?.presentScene(nextScene!, transition: SKTransition.crossFadeWithDuration(1))
         } else if(node.name == "easyLevel"){
             self.difficulty = "easy"
             hideLevels()
             setDifficulty()
+            gameStart()
         } else if(node.name == "mediumLevel"){
             self.difficulty = "medium"
             hideLevels()
             setDifficulty()
+            gameStart()
         } else if(node.name == "hardLevel"){
             self.difficulty = "hard"
             hideLevels()
             setDifficulty()
+            gameStart()
         }
         else if(node.name == "resetLevel"){
             showLevels()
@@ -167,9 +183,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             muffin.physicsBody?.velocity.dy = 0
             muffin.physicsBody?.affectedByGravity = false
             muffin.hidden = false
-            
-            
         }
+        
+    }
+    
+    
+    func gameStart(){
+        
+        muffin.physicsBody?.affectedByGravity = false
+        
+        timerLabel.hidden = false
+        timerCount.hidden = false
+        
+        let wait1 = SKAction.waitForDuration(0.0)
+        let wait2 = SKAction.waitForDuration(1.0)
+        let wait3 = SKAction.waitForDuration(2.0)
+        let wait4 = SKAction.waitForDuration(3.0)
+        
+        let run3 = SKAction.runBlock{
+            self.timerCount.text = String(3)
+        }
+        let run2 = SKAction.runBlock{
+            self.timerCount.text = String(2)
+        }
+        let run1 = SKAction.runBlock{
+            self.timerCount.text = String(1)
+        }
+        let runStart = SKAction.runBlock{
+            self.timerLabel.hidden = true
+            self.timerCount.hidden = true
+            self.muffin.physicsBody?.affectedByGravity = true
+            self.timerCount.text = String(3)
+        }
+        
+        runAction(SKAction.sequence([wait1, run3]))
+        runAction(SKAction.sequence([wait2, run2]))
+        runAction(SKAction.sequence([wait3, run1]))
+        runAction(SKAction.sequence([wait4, runStart]))
         
     }
     

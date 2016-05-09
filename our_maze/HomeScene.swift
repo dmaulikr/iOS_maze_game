@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  HomeScene.swift
 //  our_maze
 //
 //  Created by Sharol Chand on 5/6/16.
